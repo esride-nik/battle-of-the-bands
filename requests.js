@@ -47,7 +47,7 @@ const parseRes2 = async body => {
 	});
 };
 
-const vote() {
+const vote = async () => {
     let response = await fetch('https://poll.fm/n/5850d02810fa78428b5592f7999ab8d5/12585159?' + Date.now());
     await parseRes1(response.body);
     
@@ -82,6 +82,7 @@ const vote() {
 
 try {
     while (1==1) {
+        // no await to start parallel processes
         vote();
     }
 } catch (err) {
