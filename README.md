@@ -33,3 +33,5 @@ PDV_n12585159='1fd66bfc43|914';PD_vote12585159(0);
 
 https://polls.polldaddy.com/vote-js.php?p=12585159&b=0&a=56742994,&o=&va=16&cookie=0&tags=12585159-src:poll-embed&n=1fd66bfc43|914&url=https%3A//metaldevastationradio.com/thebeast/blog/23583/battle-of-the-bands-championship-for-the-week-of-07-31-23-08-04-23
 
+
+
