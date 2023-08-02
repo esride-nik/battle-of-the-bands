@@ -1,18 +1,25 @@
-const superagent = require('superagent');
+import fetch from 'node-fetch';
 
-(async () => {
-  try {
-    const res = await superagent.get('https://poll.fm/n/5850d02810fa78428b5592f7999ab8d5/12585159?1690995928215');
-    const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
-    console.log('Status Code:', res.statusCode);
-    console.log('Res:', res.);
-    console.log('Date in Response header:', headerDate);
+const read = async body => {
+	let error;
+	body.on('error', err => {
+		error = err;
+	});
 
-    // const users = res.body;
-    // for(user of users) {
-    //   console.log(`Got user with id: ${user.id}, name: ${user.name}`);
-    // }
-  } catch (err) {
-    console.log(err.message); //can be console.error
-  }
-})();
+	for await (const chunk of body) {
+		console.dir(chunk.toString());
+	}
+
+	return new Promise((resolve, reject) => {
+		body.on('close', () => {
+			error ? reject(error) : resolve();
+		});
+	});
+};
+
+try {
+	const response = await fetch('https://poll.fm/n/5850d02810fa78428b5592f7999ab8d5/12585159?1690995928215');
+	await read(response.body);
+} catch (err) {
+	console.error(err.stack);
+}

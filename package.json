@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "superagent": "^8.0.9"
-  }
+    "node-fetch": "^3.3.2"
+  },
+  "type": "module"
 }
