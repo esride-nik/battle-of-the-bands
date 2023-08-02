@@ -1,0 +1,14 @@
+{
+  "name": "battle-of-the-bands",
+  "version": "1.0.0",
+  "description": "https://poll.fm/n/5850d02810fa78428b5592f7999ab8d5/12585159?1690995490327",
+  "main": "requests.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "superagent": "^8.0.9"
+  }
+}
