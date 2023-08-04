@@ -32,7 +32,7 @@ const submitVote = async (body) => {
 	}
 
 	return new Promise((resolve, reject) => {
-        bodyString.indexOf('\n') > -1 > 0 ? resolve(bodyString) : reject(error);
+        bodyString.indexOf('\n') > -1 > 0 ? resolve(bodyString.substring(0, bodyString.indexOf('\n'))) : reject(error);
 	});
 };
 
@@ -86,4 +86,4 @@ const vote = async () => {
     }
 }
 
-setInterval(vote, 500);
+setInterval(vote, 500 + Math.random()*500);
